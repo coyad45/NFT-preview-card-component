@@ -1,0 +1,140 @@
+:root
+{
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    /*Main*/
+    --Very-dark-main: hsl(217, 54%, 11%);
+    /*Card*/
+    --Very-dark-card: hsl(216, 50%, 16%);
+    /*linea*/
+    --Very-dark-blue: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: var(--Very-dark-main);
+    font-family: 'Outfit', sans-serif;
+    color: white;
+}
+p
+{
+    color: var(--Soft-blue);
+}
+.card
+{
+    width: 400px;
+    height: 650px;
+    display: grid;
+    padding: 0 30px;
+    grid-template-rows: auto;
+    border-radius: 20px;
+    background: var(--Very-dark-card);
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.5);
+}
+/*img*/
+.card__img
+{
+    place-self: center;
+    position: relative;
+}
+.card__img img:nth-child(1)
+{
+    visibility: hidden;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    z-index: 1;
+
+}
+.card__img img:nth-child(2)
+{
+    
+    width: 340px;
+    height: 340px;
+    border-radius: 20px;
+}
+/*title*/
+.card__title h1
+{
+    font-weight: bolder;
+    
+}
+/*paraphrase*/
+.card__text p
+{
+    font-size: 18px;
+} 
+/*Card info*/
+.card__info 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--Very-dark-blue);
+}
+.info__align
+{
+    display: flex;
+    
+    
+}
+.info__align p
+{
+    margin-left: 5px;
+}
+.right
+{
+    justify-self:end;
+}
+/*Card creator bottom*/
+.card__creator
+{
+    display: flex;
+    place-items: center;
+    align-self: center;
+    
+}
+.card__creator img
+{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--White);
+}
+.card__creator b
+{
+    color: var(--White);
+}
+/*Hovers*/
+.card__img:hover > img:nth-child(1)
+{
+    visibility:visible;
+}
+.card__img:hover > img:nth-child(2)
+{
+    filter: brightness(2) invert(0.4) contrast(3);
+    cursor: pointer;
+}
+.card__creator b:hover, .card__title h1:hover
+{
+    color:var(--Soft-blue);
+    cursor: pointer;
+}
+/*Media query*/
+@media screen and (max-width:375px) {
+    .card
+    {
+        width: 375px;
+        justify-content: center;
+    }
+}
+
